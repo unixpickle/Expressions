@@ -12,11 +12,9 @@
 
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super initWithString:aString])) {
-		if ([aString isEqualToString:@"log"]) {
-			natural = NO;
-		} else if ([aString isEqualToString:@"ln"]) {
+		if ([aString isEqualToString:@"ln"]) {
 			natural = YES;
-		} else {
+		} else if (![aString isEqualToString:@"log"]) {
 			[super dealloc];
 			return nil;
 		}

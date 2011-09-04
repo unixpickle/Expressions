@@ -10,13 +10,6 @@
 
 @implementation EPStandardFunctionSource
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (BOOL)functionExists:(NSString *)funcName {
 	if ([funcName isEqualToString:@"sin"] || [funcName isEqualToString:@"cos"]) {
 		return YES;

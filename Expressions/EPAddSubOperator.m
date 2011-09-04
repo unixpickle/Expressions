@@ -10,20 +10,12 @@
 
 @implementation EPAddSubOperator
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super init])) {
-		if ([aString isEqualToString:@"+"]) {
-			isSubtraction = NO;
-		} else if ([aString isEqualToString:@"-"]) {
+		isSubtraction = NO; // should already be NO because of the Objective-C runtime
+		if ([aString isEqualToString:@"-"]) {
 			isSubtraction = YES;
-		} else {
+		} else if (![aString isEqualToString:@"+"]) {
 			[super dealloc];
 			return nil;
 		}

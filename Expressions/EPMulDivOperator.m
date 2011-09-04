@@ -10,20 +10,12 @@
 
 @implementation EPMulDivOperator
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super init])) {
+		isDivision = NO; // should already be NO because of the Objective-C runtime
 		if ([aString isEqualToString:@"/"]) {
 			isDivision = YES;
-		} else if ([aString isEqualToString:@"*"]) {
-			isDivision = NO;
-		} else {
+		} else if (![aString isEqualToString:@"*"]) {
 			[super dealloc];
 			return nil;
 		}
@@ -46,13 +38,13 @@
 	if (![anotherOperand respondsToSelector:@selector(doubleValue)]) {
 		return nil;
 	}
+	double answer = 0;
 	if (isDivision) {
-		double answer = (double)[anOperand doubleValue] / (double)[anotherOperand doubleValue];
-		return [EPNumericalToken numericalTokenWithDouble:answer];
+		answer = (double)[anOperand doubleValue] / (double)[anotherOperand doubleValue];
 	} else {
-		double answer = (double)[anOperand doubleValue] * (double)[anotherOperand doubleValue];
-		return [EPNumericalToken numericalTokenWithDouble:answer];
+		answer = (double)[anOperand doubleValue] * (double)[anotherOperand doubleValue];
 	}
+	return [EPNumericalToken numericalTokenWithDouble:answer];
 }
 
 - (BOOL)isDivision {

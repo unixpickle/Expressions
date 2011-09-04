@@ -10,13 +10,6 @@
 
 @implementation EPOperator
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (id)applyLeftOperand:(id)anOperand toRight:(id)anotherOperand {
 	@throw [NSException exceptionWithName:NSInternalInconsistencyException
 								   reason:@"This is an abstract class and must be subclassed."

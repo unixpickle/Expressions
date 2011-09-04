@@ -19,16 +19,9 @@
 
 @implementation EPExpression
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (id)initWithTokenString:(EPTokenString *)tString {
 	if ((self = [super init])) {
-		id lastObject = nil;
+		BOOL mulNeeded = NO;
 		tokens = [[NSMutableArray alloc] init];
 		
 		for (NSUInteger i = 0; i < [[tString tokenArray] count]; i++) {
@@ -50,21 +43,19 @@
 					[self dealloc];
 					return nil;
 				}
-				if (![lastObject isKindOfClass:[EPOperator class]] && ![lastObject isKindOfClass:[EPFunctionToken class]] && lastObject != nil) {
-					// insert multiplication operator
+				if (mulNeeded) {
+					// insert unwritten multiplication operator
 					[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
 				}
 				[tokens addObject:expr];
-				lastObject = [expr autorelease];
+				mulNeeded = YES;
 			} else {
-				if (![token isKindOfClass:[EPOperator class]]) {
-					if (![lastObject isKindOfClass:[EPOperator class]] && ![lastObject isKindOfClass:[EPFunctionToken class]] && lastObject != nil) {
-						// insert multiplication operator
-						[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
-					}
+				if (![token isKindOfClass:[EPOperator class]] && mulNeeded) {
+					// insert unwritten multiplication operator
+					[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
 				}
 				[tokens addObject:token];
-				lastObject = token;
+				mulNeeded = (![token isKindOfClass:[EPOperator class]] && ![token isKindOfClass:[EPFunctionToken class]] && token != nil);
 			}
 		}
 	}
@@ -73,11 +64,11 @@
 
 - (EPNumericalToken *)evaluateToToken {
 	// Here we use PEMDAS to evaluate the expression
-	if (![self evaluateSubExpressions]) return nil;
-	if (![self performFunctions]) return nil;
-	if (![self performOperatorsOfClass:[EPPowerOperator class]]) return nil;
-	if (![self performOperatorsOfClass:[EPMulDivOperator class]]) return nil;
-	if (![self performOperatorsOfClass:[EPAddSubOperator class]]) return nil;
+	if (![self evaluateSubExpressions]) return nil; // P
+	if (![self performFunctions]) return nil; // (implied)
+	if (![self performOperatorsOfClass:[EPPowerOperator class]]) return nil; // E
+	if (![self performOperatorsOfClass:[EPMulDivOperator class]]) return nil; // MD
+	if (![self performOperatorsOfClass:[EPAddSubOperator class]]) return nil; // AS
 	if ([tokens count] != 1) {
 		return nil;
 	}
@@ -126,12 +117,12 @@
 		NSObject * obj = [tokens objectAtIndex:i];
 		if ([obj isKindOfClass:[EPFunctionToken class]]) {
 			EPFunctionToken * funct = (EPFunctionToken *)obj;
-			if (i + 1 == [tokens count]) {
+			if (i + 1 >= [tokens count]) {
 				return NO;
 			}
-			NSObject * nextObj = [tokens objectAtIndex:(i + 1)];
+			id nextObj = [tokens objectAtIndex:(i + 1)];
 			EPNumericalToken * answer = [funct applyToOperand:nextObj];
-			if ([answer respondsToSelector:@selector(doubleValue)]) {
+			if ([answer respondsToSelector:@selector(doubleValue)] && answer != nil) {
 				NSArray * ansArray = [NSArray arrayWithObject:answer];
 				[tokens replaceObjectsInRange:NSMakeRange(i, 2) withObjectsFromArray:ansArray];
 			} else {
@@ -146,8 +137,8 @@
 	// TODO: perform operators here
 	for (NSUInteger i = 0; i < [tokens count]; i++) {
 		NSObject * obj = [tokens objectAtIndex:i];
-		if ([obj isKindOfClass:aClass]) {
-			if (i == 0 || i + 1 == [tokens count]) {
+		if ([obj isKindOfClass:aClass] && [obj isKindOfClass:[EPOperator class]]) {
+			if (i == 0 || i + 1 >= [tokens count]) {
 				return NO;
 			}
 			EPNumericalToken * answer = [(EPOperator *)obj applyLeftOperand:[tokens objectAtIndex:(i - 1)] 

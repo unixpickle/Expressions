@@ -10,12 +10,6 @@
 
 @implementation EPPowerOperator
 
-- (id)init {
-	if ((self = [super init])) {
-	}
-	return self;
-}
-
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super init])) {
 		if (![aString isEqualToString:@"^"]) {

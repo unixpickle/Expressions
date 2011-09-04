@@ -10,20 +10,11 @@
 
 @implementation EPSinCosFunction
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super initWithString:aString])) {
 		if ([aString isEqualToString:@"cos"]) {
 			isCosine = YES;
-		} else if ([aString isEqualToString:@"sin"]) {
-			isCosine = NO;
-		} else {
+		} else if (![aString isEqualToString:@"sin"]) {
 			[super dealloc];
 			return nil;
 		}

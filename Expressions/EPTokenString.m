@@ -19,12 +19,6 @@
 
 @implementation EPTokenString
 
-- (id)init {
-	if ((self = [super init])) {
-	}
-	return self;
-}
-
 - (id)initWithExpression:(NSString *)expression varSource:(id<EPTokenStringVariableSource>)variables
 			  funcSource:(id<EPTokenStringFunctionSource>)functions {
 	if ((self = [super init])) {

@@ -10,13 +10,6 @@
 
 @implementation EPFunctionToken
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super init])) {
 		functionName = [aString retain];

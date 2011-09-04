@@ -10,13 +10,6 @@
 
 @implementation EPParenthesesToken
 
-- (id)init {
-	if ((self = [super init])) {
-		direction = EPTParenthesesOpen;
-	}
-	return self;
-}
-
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super init])) {
 		if ([aString isEqualToString:@"("]) {

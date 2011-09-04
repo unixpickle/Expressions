@@ -10,13 +10,6 @@
 
 @implementation EPDictionaryVariableSource
 
-- (id)init {
-	if ((self = [super init])) {
-		// Initialization code here.
-	}
-	return self;
-}
-
 - (id)initWithDictionary:(NSDictionary *)varInfo {
 	if ((self = [super init])) {
 		varDictionary = [varInfo copyWithZone:NSDefaultMallocZone()];
