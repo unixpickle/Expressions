@@ -42,13 +42,13 @@
 	if (![anotherOperand respondsToSelector:@selector(doubleValue)]) {
 		return nil;
 	}
+	double answer = 0;
 	if (isSubtraction) {
-		double answer = (double)[anOperand doubleValue] - (double)[anotherOperand doubleValue];
-		return [EPNumericalToken numericalTokenWithDouble:answer];
+		answer = (double)[anOperand doubleValue] - (double)[anotherOperand doubleValue];
 	} else {
-		double answer = (double)[anOperand doubleValue] + (double)[anotherOperand doubleValue];
-		return [EPNumericalToken numericalTokenWithDouble:answer];
+		answer = (double)[anOperand doubleValue] + (double)[anotherOperand doubleValue];
 	}
+	return [EPNumericalToken numericalTokenWithDouble:answer];
 }
 
 @end
