@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "NSNumber+Expression.h"
 
+NSString * NSReadLine (FILE * fp);
+
 int main (int argc, const char * argv[]) {
 	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
@@ -18,11 +20,32 @@ int main (int argc, const char * argv[]) {
 	NSNumber * parsedx = [NSNumber numberByParsingExpression:@"sin(x(pi/180))" withVariables:variables];
 	// Non-compressed equation ;)
 	NSNumber * parsedy = [NSNumber numberByParsingExpression:@"sin ( y * ( pi / 180 ) )" withVariables:variables];
-	// Both work!
+	// Both work perfectly
 	NSLog(@"sin(90): %@", parsedx);
 	NSLog(@"sin(180): %@", parsedy);
+	
+	printf("Enter an expression: ");
+	NSString * expr = NSReadLine(stdin);
+	NSNumber * parsed = [NSNumber numberByParsingExpression:expr];
+	NSLog(@"Parsed: %@", parsed);
 	
 	[pool drain];
 	return 0;
 }
 
+NSString * NSReadLine (FILE * fp) {
+	NSMutableString * stringBuilder = [[NSMutableString alloc] init];
+	while (!feof(fp)) {
+		int aChar = fgetc(fp);
+		if (aChar == EOF) {
+			break;
+		} else if (aChar != '\r') {
+			if (aChar == '\n') break;
+			[stringBuilder appendFormat:@"%c", (char)aChar];
+		}
+	}
+	
+	NSString * immutable = [NSString stringWithString:stringBuilder];
+	[stringBuilder release];
+	return immutable;
+}

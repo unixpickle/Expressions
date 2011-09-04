@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "EPTokenString.h"
 #import "EPSinCosFunction.h"
+#import "EPTanAtanFunction.h"
+#import "EPLogLnToken.h"
 
 @interface EPStandardFunctionSource : NSObject <EPTokenStringFunctionSource> {
 	
