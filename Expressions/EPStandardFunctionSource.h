@@ -11,6 +11,7 @@
 #import "EPSinCosFunction.h"
 #import "EPTanAtanFunction.h"
 #import "EPLogLnToken.h"
+#import "EPSqrtFunction.h"
 
 @interface EPStandardFunctionSource : NSObject <EPTokenStringFunctionSource> {
 	

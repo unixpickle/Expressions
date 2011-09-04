@@ -22,6 +22,7 @@
 		FA92708A1413CD3700D11AA6 /* EPVariableToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9270891413CD3600D11AA6 /* EPVariableToken.m */; };
 		FA9A0C341414065F00CFA1EE /* EPTanAtanFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A0C331414065F00CFA1EE /* EPTanAtanFunction.m */; };
 		FA9A0C381414076C00CFA1EE /* EPLogLnToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A0C371414076C00CFA1EE /* EPLogLnToken.m */; };
+		FA9A0C3C1414126500CFA1EE /* EPSqrtFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A0C3B1414126400CFA1EE /* EPSqrtFunction.m */; };
 		FAB041D31413D774001BDB42 /* EPTokenString.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041D21413D774001BDB42 /* EPTokenString.m */; };
 		FAB041D71413D89C001BDB42 /* EPSinCosFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041D61413D89C001BDB42 /* EPSinCosFunction.m */; };
 		FAB041DA1413D90F001BDB42 /* EPStandardFunctionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041D91413D90F001BDB42 /* EPStandardFunctionSource.m */; };
@@ -72,6 +73,8 @@
 		FA9A0C331414065F00CFA1EE /* EPTanAtanFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPTanAtanFunction.m; sourceTree = "<group>"; };
 		FA9A0C361414076C00CFA1EE /* EPLogLnToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLogLnToken.h; sourceTree = "<group>"; };
 		FA9A0C371414076C00CFA1EE /* EPLogLnToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPLogLnToken.m; sourceTree = "<group>"; };
+		FA9A0C3A1414126400CFA1EE /* EPSqrtFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSqrtFunction.h; sourceTree = "<group>"; };
+		FA9A0C3B1414126400CFA1EE /* EPSqrtFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSqrtFunction.m; sourceTree = "<group>"; };
 		FAB041D11413D774001BDB42 /* EPTokenString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPTokenString.h; sourceTree = "<group>"; };
 		FAB041D21413D774001BDB42 /* EPTokenString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPTokenString.m; sourceTree = "<group>"; };
 		FAB041D51413D89C001BDB42 /* EPSinCosFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSinCosFunction.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				FA9A0C331414065F00CFA1EE /* EPTanAtanFunction.m */,
 				FA9A0C361414076C00CFA1EE /* EPLogLnToken.h */,
 				FA9A0C371414076C00CFA1EE /* EPLogLnToken.m */,
+				FA9A0C3A1414126400CFA1EE /* EPSqrtFunction.h */,
+				FA9A0C3B1414126400CFA1EE /* EPSqrtFunction.m */,
 				FAB041D81413D90F001BDB42 /* EPStandardFunctionSource.h */,
 				FAB041D91413D90F001BDB42 /* EPStandardFunctionSource.m */,
 			);
@@ -278,6 +283,7 @@
 				FAB041E11413EF25001BDB42 /* EPDictionaryVariableSource.m in Sources */,
 				FA9A0C341414065F00CFA1EE /* EPTanAtanFunction.m in Sources */,
 				FA9A0C381414076C00CFA1EE /* EPLogLnToken.m in Sources */,
+				FA9A0C3C1414126500CFA1EE /* EPSqrtFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

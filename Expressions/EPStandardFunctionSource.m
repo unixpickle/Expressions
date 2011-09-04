@@ -20,6 +20,9 @@
 	if ([funcName isEqualToString:@"log"] || [funcName isEqualToString:@"ln"]) {
 		return YES;
 	}
+	if ([funcName isEqualToString:@"sqrt"]) {
+		return YES;
+	}
 	
 	return NO;
 }
@@ -31,6 +34,8 @@
 		return [[[EPTanAtanFunction alloc] initWithString:funcName] autorelease];
 	} else if ([funcName isEqualToString:@"ln"] || [funcName isEqualToString:@"log"]) {
 		return [[[EPLogLnToken alloc] initWithString:funcName] autorelease];
+	} else if ([funcName isEqualToString:@"sqrt"]) {
+		return [[[EPSqrtFunction alloc] initWithString:funcName] autorelease];
 	}
 	return nil;
 }

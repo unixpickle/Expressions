@@ -27,7 +27,15 @@ int main (int argc, const char * argv[]) {
 	printf("Enter an expression: ");
 	NSString * expr = NSReadLine(stdin);
 	NSNumber * parsed = [NSNumber numberByParsingExpression:expr];
-	NSLog(@"Parsed: %@", parsed);
+	NSLog(@"%@ = %@", expr, parsed);
+	
+	NSLog(@"Starting benchmark: %@.", expr);
+	for (int i = 0; i < 10000; i++) {
+		NSAutoreleasePool * inner = [[NSAutoreleasePool alloc] init];
+		[NSNumber numberByParsingExpression:expr];
+		[inner drain];
+	}
+	NSLog(@"Done benchmark.");
 	
 	[pool drain];
 	return 0;
