@@ -24,6 +24,9 @@ int main (int argc, const char * argv[]) {
 	NSLog(@"sin(90): %@", parsedx);
 	NSLog(@"sin(180): %@", parsedy);
 	
+	NSNumber * parsedw = [NSNumber numberByParsingExpression:@"-x^2" withVariables:variables];
+	NSLog(@"-x^2 = %@", parsedw);
+	
 	printf("Enter an expression: ");
 	NSString * expr = NSReadLine(stdin);
 	NSNumber * parsed = [NSNumber numberByParsingExpression:expr];

@@ -22,6 +22,7 @@
 - (id)initWithTokenString:(EPTokenString *)tString {
 	if ((self = [super init])) {
 		BOOL mulNeeded = NO;
+		BOOL lastWasOperator = YES;
 		tokens = [[NSMutableArray alloc] init];
 		
 		for (NSUInteger i = 0; i < [[tString tokenArray] count]; i++) {
@@ -49,10 +50,23 @@
 				}
 				[tokens addObject:expr];
 				mulNeeded = YES;
+				lastWasOperator = NO;
 			} else {
 				if (![token isKindOfClass:[EPOperator class]] && mulNeeded) {
 					// insert unwritten multiplication operator
 					[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
+				}
+				if ([token isKindOfClass:[EPOperator class]]) {
+					if ([token isKindOfClass:[EPAddSubOperator class]]) {
+						if ([(EPAddSubOperator *)token isSubtraction]) {
+							[tokens addObject:[[[EPNumericalToken alloc] initWithDouble:0] autorelease]];
+						}
+					}
+				}
+				if ([token isKindOfClass:[EPOperator class]]) {
+					lastWasOperator = YES;
+				} else {
+					lastWasOperator = NO;
 				}
 				[tokens addObject:token];
 				mulNeeded = (![token isKindOfClass:[EPOperator class]] && ![token isKindOfClass:[EPFunctionToken class]] && token != nil);
