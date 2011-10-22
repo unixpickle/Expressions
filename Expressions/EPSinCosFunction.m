@@ -22,7 +22,7 @@
 	return self;
 }
 
-- (EPNumericalToken *)applyToOperand:(id)anOperand {
+- (EPNumericalToken *)applyToOperandAbsolute:(id)anOperand {
 	if (![anOperand respondsToSelector:@selector(doubleValue)]) {
 		return nil;
 	}
@@ -31,6 +31,10 @@
 	} else {
 		return [EPNumericalToken numericalTokenWithDouble:sin([anOperand doubleValue])];
 	}
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+	return [[EPSinCosFunction allocWithZone:zone] initWithString:[self toString]];
 }
 
 - (BOOL)isCosine {

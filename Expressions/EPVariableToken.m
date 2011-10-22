@@ -27,6 +27,12 @@
 	return variableName;
 }
 
+- (id)negativeToken {
+	EPVariableToken * token = [[EPVariableToken alloc] initWithString:variableName];
+	[token setDoubleValue:-[self doubleValue]];
+	return [token autorelease];
+}
+
 - (void)dealloc {
 	[variableName release];
 	[super dealloc];

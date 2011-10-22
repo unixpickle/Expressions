@@ -68,6 +68,11 @@
 	return immutable;
 }
 
+- (id)negativeToken {
+	EPNumericalToken * token = [[EPNumericalToken alloc] initWithDouble:-[self doubleValue]];
+	return [token autorelease];
+}
+
 - (double)doubleValue {
 	return doubleValue;
 }

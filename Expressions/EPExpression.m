@@ -19,10 +19,12 @@
 
 @implementation EPExpression
 
+@synthesize negateExpression;
+
 - (id)initWithTokenString:(EPTokenString *)tString {
 	if ((self = [super init])) {
-		BOOL mulNeeded = NO;
-		BOOL lastWasOperator = YES;
+		BOOL mulNeeded = NO, negateNext = NO;
+		EPToken * lastToken = nil;
 		tokens = [[NSMutableArray alloc] init];
 		
 		for (NSUInteger i = 0; i < [[tString tokenArray] count]; i++) {
@@ -48,29 +50,43 @@
 					// insert unwritten multiplication operator
 					[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
 				}
+				[expr setNegateExpression:negateNext];
 				[tokens addObject:expr];
+				negateNext = NO;
 				mulNeeded = YES;
-				lastWasOperator = NO;
 			} else {
+				BOOL insertToken = YES;
 				if (![token isKindOfClass:[EPOperator class]] && mulNeeded) {
 					// insert unwritten multiplication operator
 					[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
 				}
-				if ([token isKindOfClass:[EPOperator class]]) {
+				if ([token isKindOfClass:[EPOperator class]] && ([lastToken isKindOfClass:[EPOperator class]] || lastToken == nil)) {
 					if ([token isKindOfClass:[EPAddSubOperator class]]) {
 						if ([(EPAddSubOperator *)token isSubtraction]) {
-							[tokens addObject:[[[EPNumericalToken alloc] initWithDouble:0] autorelease]];
+							// if the last token was a carrot (exponent), then negate the next token.
+							// otherwise, replace - with * -1
+							if ([lastToken isKindOfClass:[EPPowerOperator class]]) {
+								negateNext = YES;
+							} else {
+								negateNext = NO;
+								[tokens addObject:[EPNumericalToken numericalTokenWithDouble:-1]];
+								[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
+							}
+							insertToken = NO;							
 						}
 					}
 				}
-				if ([token isKindOfClass:[EPOperator class]]) {
-					lastWasOperator = YES;
-				} else {
-					lastWasOperator = NO;
+				if (insertToken) {
+					if (negateNext) {
+						[tokens addObject:[token negativeToken]];
+					} else {
+						[tokens addObject:token];
+					}
+					negateNext = NO;
 				}
-				[tokens addObject:token];
 				mulNeeded = (![token isKindOfClass:[EPOperator class]] && ![token isKindOfClass:[EPFunctionToken class]] && token != nil);
 			}
+			lastToken = token;
 		}
 	}
 	return self;
@@ -89,7 +105,12 @@
 	if (![[tokens objectAtIndex:0] isKindOfClass:[EPNumericalToken class]]) {
 		return nil;
 	}
-	return [tokens objectAtIndex:0];
+	if (!negateExpression) {
+		return [tokens objectAtIndex:0];
+	} else {
+		EPNumericalToken * token = [tokens objectAtIndex:0];
+		return [[[EPNumericalToken alloc] initWithDouble:-[token doubleValue]] autorelease];
+	}
 }
 
 - (void)dealloc {

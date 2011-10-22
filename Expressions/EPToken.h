@@ -19,5 +19,6 @@
 
 - (id)initWithString:(NSString *)aString;
 - (NSString *)toString;
+- (id)negativeToken;
 
 @end

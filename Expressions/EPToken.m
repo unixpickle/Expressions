@@ -23,4 +23,10 @@
 								 userInfo:nil];
 }
 
+- (id)negativeToken {
+	@throw [NSException exceptionWithName:NSInternalInconsistencyException
+								   reason:@"This is an abstract class and must be subclassed."
+								 userInfo:nil];
+}
+
 @end

@@ -12,7 +12,8 @@
 
 + (NSNumber *)numberByParsingExpression:(NSString *)expression {
 	EPStandardFunctionSource * functs = [[[EPStandardFunctionSource alloc] init] autorelease];
-	EPTokenString * tString = [[EPTokenString alloc] initWithExpression:expression varSource:nil funcSource:functs];
+	EPDictionaryVariableSource * vars = [[[EPDictionaryVariableSource alloc] init] autorelease];
+	EPTokenString * tString = [[EPTokenString alloc] initWithExpression:expression varSource:vars funcSource:functs];
 	if (!tString) return nil;
 	EPExpression * exp = [[EPExpression alloc] initWithTokenString:tString];
 	[tString release];

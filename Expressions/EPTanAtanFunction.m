@@ -32,7 +32,11 @@
 	} else {
 		answer = tan([anOperand doubleValue]);
 	}
-	return [[[EPNumericalToken alloc] initWithDouble:answer] autorelease];
+	return [EPNumericalToken numericalTokenWithDouble:answer];
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+	return [[EPTanAtanFunction allocWithZone:zone] initWithString:[self toString]];
 }
 
 - (BOOL)isAtan {

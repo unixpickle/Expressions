@@ -28,4 +28,8 @@
 	return [[[EPNumericalToken alloc] initWithDouble:answer] autorelease];
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+	return [[EPSqrtFunction allocWithZone:zone] initWithString:[self toString]];
+}
+
 @end

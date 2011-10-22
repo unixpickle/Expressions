@@ -35,6 +35,10 @@
 	return [[[EPNumericalToken alloc] initWithDouble:answer] autorelease];
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+	return [[EPLogLnToken allocWithZone:zone] initWithString:[self toString]];
+}
+
 - (BOOL)isNatural {
 	return natural;
 }

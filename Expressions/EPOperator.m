@@ -16,4 +16,8 @@
 								 userInfo:nil];
 }
 
+- (id)negativeToken {
+	return [[self retain] autorelease];
+}
+
 @end

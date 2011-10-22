@@ -11,7 +11,10 @@
 
 @interface EPExpression : NSObject {
 	NSMutableArray * tokens;
+	BOOL negateExpression;
 }
+
+@property (readwrite) BOOL negateExpression;
 
 - (id)initWithTokenString:(EPTokenString *)tString;
 - (EPNumericalToken *)evaluateToToken;
