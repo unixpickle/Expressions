@@ -36,4 +36,12 @@
 	return direction;
 }
 
+- (id)negativeToken {
+	return [[self retain] autorelease];
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+	return [[EPParenthesesToken allocWithZone:zone] initWithString:[self toString]];
+}
+
 @end

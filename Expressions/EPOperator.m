@@ -20,4 +20,8 @@
 	return [[self retain] autorelease];
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+	return [[[self class] allocWithZone:zone] initWithString:[self toString]];
+}
+
 @end

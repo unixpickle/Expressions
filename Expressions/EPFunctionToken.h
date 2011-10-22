@@ -12,7 +12,7 @@
  * This is an abstract class for a mathematical function.  This should be subclassed,
  * and the applyToOperand method should be overridden.
  */
-@interface EPFunctionToken : EPToken <NSCopying> {
+@interface EPFunctionToken : EPToken {
 	NSString * functionName;
 	BOOL negated;
 }

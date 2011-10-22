@@ -33,6 +33,12 @@
 	return [token autorelease];
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+	EPVariableToken * token = [[EPVariableToken allocWithZone:zone] initWithString:[self toString]];
+	[token setDoubleValue:[self doubleValue]];
+	return token;
+}
+
 - (void)dealloc {
 	[variableName release];
 	[super dealloc];

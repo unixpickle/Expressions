@@ -29,4 +29,8 @@
 								 userInfo:nil];
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+	return nil;
+}
+
 @end

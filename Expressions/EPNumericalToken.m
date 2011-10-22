@@ -73,6 +73,10 @@
 	return [token autorelease];
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+	return [[EPNumericalToken allocWithZone:zone] initWithDouble:[self doubleValue]];
+}
+
 - (double)doubleValue {
 	return doubleValue;
 }

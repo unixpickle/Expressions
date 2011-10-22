@@ -51,9 +51,7 @@
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-	@throw [NSException exceptionWithName:NSInternalInconsistencyException
-								   reason:@"This is an abstract method and must be overridden."
-								 userInfo:nil];
+	return [[[self class] allocWithZone:zone] initWithString:[self toString]];
 }
 
 - (void)dealloc {

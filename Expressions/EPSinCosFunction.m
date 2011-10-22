@@ -33,10 +33,6 @@
 	}
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-	return [[EPSinCosFunction allocWithZone:zone] initWithString:[self toString]];
-}
-
 - (BOOL)isCosine {
 	return isCosine;
 }

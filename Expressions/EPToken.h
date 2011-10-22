@@ -13,7 +13,7 @@
  * expression.  This should always be subclassed, and all of it's instance
  * methods should be overridden.
  */
-@interface EPToken : NSObject {
+@interface EPToken : NSObject <NSCopying> {
 	
 }
 
