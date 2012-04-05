@@ -32,23 +32,38 @@
 			if ([token isKindOfClass:[EPParenthesesToken class]]) {
 				EPParenthesesToken * pt = (EPParenthesesToken *)token;
 				if ([pt direction] == EPTParenthesesClose) {
-					[self dealloc];
+#if !__has_feature(objc_arc)
+                    [super dealloc];
+#endif
 					return nil;
 				}
 				// go until we find a matching end-paren
 				EPTokenString * subExpr = [self subExpression:tString fromIndex:&i];
 				if (!subExpr) {
-					[self dealloc];
+#if !__has_feature(objc_arc)
+                    [super dealloc];
+#endif
 					return nil;
 				}
+#if __has_feature(objc_arc)
 				EPExpression * expr = [[EPExpression alloc] initWithTokenString:subExpr];
+#else
+                EPExpression * expr = [[[EPExpression alloc] initWithTokenString:subExpr] autorelease];
+#endif
 				if (!expr) {
-					[self dealloc];
+#if !__has_feature(objc_arc)
+                    [super dealloc];
+#endif
 					return nil;
 				}
 				if (mulNeeded) {
 					// insert unwritten multiplication operator
-					[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
+                    id obj = [[EPMulDivOperator alloc] initWithString:@"*"];
+#if !__has_feature(objc_arc)
+					[tokens addObject:[obj autorelease]];
+#else
+                    [tokens addObject:obj];
+#endif
 				}
 				[expr setNegateExpression:negateNext];
 				[tokens addObject:expr];
@@ -58,7 +73,12 @@
 				BOOL insertToken = YES;
 				if (![token isKindOfClass:[EPOperator class]] && mulNeeded) {
 					// insert unwritten multiplication operator
-					[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
+                    id obj = [[EPMulDivOperator alloc] initWithString:@"*"];
+#if !__has_feature(objc_arc)
+					[tokens addObject:[obj autorelease]];
+#else
+                    [tokens addObject:obj];
+#endif
 				}
 				if ([token isKindOfClass:[EPOperator class]] && ([lastToken isKindOfClass:[EPOperator class]] || lastToken == nil)) {
 					if ([token isKindOfClass:[EPAddSubOperator class]]) {
@@ -70,7 +90,12 @@
 							} else {
 								negateNext = NO;
 								[tokens addObject:[EPNumericalToken numericalTokenWithDouble:-1]];
-								[tokens addObject:[[[EPMulDivOperator alloc] initWithString:@"*"] autorelease]];
+                                id obj = [[EPMulDivOperator alloc] initWithString:@"*"];
+#if !__has_feature(objc_arc)
+                                [tokens addObject:[obj autorelease]];
+#else
+                                [tokens addObject:obj];
+#endif
 							}
 							insertToken = NO;							
 						}
@@ -109,14 +134,21 @@
 		return [tokens objectAtIndex:0];
 	} else {
 		EPNumericalToken * token = [tokens objectAtIndex:0];
-		return [[[EPNumericalToken alloc] initWithDouble:-[token doubleValue]] autorelease];
+        id obj = [[EPNumericalToken alloc] initWithDouble:-[token doubleValue]];
+#if !__has_feature(objc_arc)
+		return [obj autorelease];
+#else
+        return obj;
+#endif
 	}
 }
 
+#if !__has_feature(objc_arc)
 - (void)dealloc {
 	[tokens release];
 	[super dealloc];
 }
+#endif
 
 #pragma mark Private
 

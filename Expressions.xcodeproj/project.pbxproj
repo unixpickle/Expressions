@@ -341,6 +341,7 @@
 		FA9270681413BDC200D11AA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Expressions/Expressions-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +351,7 @@
 		FA9270691413BDC200D11AA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Expressions/Expressions-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";

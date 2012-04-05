@@ -13,7 +13,9 @@
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super init])) {
 		if (![aString isEqualToString:@"^"]) {
+#if !__has_feature(objc_arc)
 			[super dealloc];
+#endif
 			return nil;
 		}
 	}

@@ -30,9 +30,11 @@
 	return [[varDictionary objectForKey:varName] doubleValue];
 }
 
+#if !__has_feature(objc_arc)
 - (void)dealloc {
 	[varDictionary release];
 	[super dealloc];
 }
+#endif
 
 @end

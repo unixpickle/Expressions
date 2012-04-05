@@ -15,7 +15,9 @@
 		if ([aString isEqualToString:@"atan"]) {
 			isAtan = YES;
 		} else if (![aString isEqualToString:@"tan"]) {
+#if !__has_feature(objc_arc)
 			[super dealloc];
+#endif
 			return nil;
 		}
 	}
@@ -24,7 +26,7 @@
 
 - (EPNumericalToken *)applyToOperand:(id)anOperand {
 	if (![anOperand respondsToSelector:@selector(doubleValue)]) {
-		return NO;
+		return nil;
 	}
 	double answer = 0;
 	if (isAtan) {

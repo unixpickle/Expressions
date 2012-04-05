@@ -14,7 +14,11 @@
 
 - (id)initWithString:(NSString *)aString {
 	if ((self = [super init])) {
+#if __has_feature(objc_arc)
+        functionName = aString;
+#else
 		functionName = [aString retain];
+#endif
 	}
 	return self;
 }
@@ -47,16 +51,22 @@
 - (id)negativeToken {
 	EPFunctionToken * newToken = [self copy];
 	[newToken setNegative:([self negative] ? NO : YES)];
+#if __has_feature(objc_arc)
+    return newToken;
+#else
 	return [newToken autorelease];
+#endif
 }
 
 - (id)copyWithZone:(NSZone *)zone {
 	return [[[self class] allocWithZone:zone] initWithString:[self toString]];
 }
 
+#if !__has_feature(objc_arc)
 - (void)dealloc {
 	[functionName release];
 	[super dealloc];
 }
+#endif
 
 @end

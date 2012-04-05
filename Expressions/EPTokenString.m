@@ -34,7 +34,10 @@
 					if (token) {
 						[tArray addObject:token];
 					} else {
-						[tArray release], [super dealloc];
+#if !__has_feature(objc_arc)
+						[tArray release];
+                        [super dealloc];
+#endif
 						return nil;
 					}
 				}
@@ -43,7 +46,10 @@
 				if (token) {
 					[tArray addObject:token];
 				} else {
-					[tArray release], [super dealloc];
+#if !__has_feature(objc_arc)
+                    [tArray release];
+                    [super dealloc];
+#endif
 					return nil;
 				}
 			} else if (!isspace(aChar)) {
@@ -55,12 +61,17 @@
 			if (token) {
 				[tArray addObject:token];
 			} else {
-				[tArray release], [super dealloc];
+#if !__has_feature(objc_arc)
+				[tArray release];
+                [super dealloc];
+#endif
 				return nil;
 			}
 		}
 		tokenArray = [[NSArray alloc] initWithArray:tArray];
+#if !__has_feature(objc_arc)
 		[tArray release];
+#endif
 	}
 	return self;
 }
@@ -82,14 +93,22 @@
 	}
 	
 	NSArray * immutable = [NSArray arrayWithArray:subArray];
+#if !__has_feature(objc_arc)
 	[subArray release];
+#endif
+#if __has_feature(objc_arc)
+    return [[EPTokenString alloc] initWithTokens:immutable];
+#else
 	return [[[EPTokenString alloc] initWithTokens:immutable] autorelease];
+#endif
 }
 
+#if !__has_feature(objc_arc)
 - (void)dealloc {
 	[tokenArray release];
 	[super dealloc];
 }
+#endif
 
 #pragma mark Private
 
@@ -104,18 +123,30 @@
 	// go through a series of possibilities
 	EPToken * theToken = nil;
 	
-	NSString * tString = [[[NSString alloc] initWithString:_tString] autorelease];
+	NSString * tString = [NSString stringWithString:_tString];
 	
+#if __has_feature(objc_arc)
+    if ((theToken = [[EPParenthesesToken alloc] initWithString:tString]) != nil) return theToken;	
+	if ((theToken = [[EPAddSubOperator alloc] initWithString:tString]) != nil) return theToken;
+	if ((theToken = [[EPMulDivOperator alloc] initWithString:tString]) != nil) return theToken;
+	if ((theToken = [[EPPowerOperator alloc] initWithString:tString]) != nil) return theToken;
+	if ((theToken = [[EPNumericalToken alloc] initWithString:tString]) != nil) return theToken;
+#else
 	if ((theToken = [[EPParenthesesToken alloc] initWithString:tString]) != nil) return [theToken autorelease];	
 	if ((theToken = [[EPAddSubOperator alloc] initWithString:tString]) != nil) return [theToken autorelease];
 	if ((theToken = [[EPMulDivOperator alloc] initWithString:tString]) != nil) return [theToken autorelease];
 	if ((theToken = [[EPPowerOperator alloc] initWithString:tString]) != nil) return [theToken autorelease];
 	if ((theToken = [[EPNumericalToken alloc] initWithString:tString]) != nil) return [theToken autorelease];
+#endif
 	
 	if ([vars variableExists:tString]) {
 		theToken = [[EPVariableToken alloc] initWithString:tString];
 		[(EPVariableToken *)theToken setDoubleValue:[vars variableValue:tString]];
+#if __has_feature(objc_arc)
+        return theToken;
+#else
 		return [theToken autorelease];
+#endif
 	}
 	
 	if ([functs functionExists:tString]) {

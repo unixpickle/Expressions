@@ -17,16 +17,22 @@
 		for (int i = 0; i < [aString length]; i++) {
 			unichar aChar = [aString characterAtIndex:i];
 			if (!isnumber(aChar) && aChar != '-' && aChar != '.') {
-				[super dealloc];
+#if !__has_feature(objc_arc)
+                [super dealloc];
+#endif
 				return nil;
 			} else if (aChar == '-' && i != 0) {
-				[super dealloc];
+#if !__has_feature(objc_arc)
+                [super dealloc];
+#endif
 				return nil;
 			} else if (aChar == '.') {
 				if (!hasFoundDot) {
 					hasFoundDot = YES;
 				} else {
-					[super dealloc];
+#if !__has_feature(objc_arc)
+                    [super dealloc];
+#endif
 					return nil;
 				}
 			}
@@ -44,14 +50,21 @@
 }
 
 + (EPNumericalToken *)numericalTokenWithDouble:(double)dVal {
-	return [[[EPNumericalToken alloc] initWithDouble:dVal] autorelease];
+    id obj = [[EPNumericalToken alloc] initWithDouble:dVal];
+#if __has_feature(objc_arc)
+    return obj;
+#else
+    return [obj autorelease];
+#endif
 }
 
 - (NSString *)toString {
 	NSMutableString * aString = [[NSMutableString alloc] initWithFormat:@"%1000.5lf", doubleValue];
 	
 	if ([aString length] == 0) {
-		[aString release];
+#if !__has_feature(objc_arc)
+        [aString release];
+#endif
 		return @"";
 	}
 	
@@ -64,13 +77,19 @@
 	}
 	
 	NSString * immutable = [NSString stringWithString:aString];
-	[aString release];
+#if !__has_feature(objc_arc)
+    [aString release];
+#endif
 	return immutable;
 }
 
 - (id)negativeToken {
 	EPNumericalToken * token = [[EPNumericalToken alloc] initWithDouble:-[self doubleValue]];
-	return [token autorelease];
+#if !__has_feature(objc_arc)
+    return [token autorelease];
+#else
+    return token;
+#endif
 }
 
 - (id)copyWithZone:(NSZone *)zone {

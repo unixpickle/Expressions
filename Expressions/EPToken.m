@@ -11,7 +11,9 @@
 @implementation EPToken
 
 - (id)initWithString:(NSString *)aString {
-	[super dealloc];
+#if !__has_feature(objc_arc)
+    [super dealloc];
+#endif
 	@throw [NSException exceptionWithName:NSInternalInconsistencyException
 								   reason:@"This is an abstract class and must be subclassed."
 								 userInfo:nil];

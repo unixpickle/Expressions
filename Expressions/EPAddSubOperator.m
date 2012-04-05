@@ -16,7 +16,9 @@
 		if ([aString isEqualToString:@"-"]) {
 			isSubtraction = YES;
 		} else if (![aString isEqualToString:@"+"]) {
+#if !__has_feature(objc_arc)
 			[super dealloc];
+#endif
 			return nil;
 		}
 	}

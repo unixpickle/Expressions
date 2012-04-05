@@ -15,7 +15,9 @@
 		if ([aString isEqualToString:@"ln"]) {
 			natural = YES;
 		} else if (![aString isEqualToString:@"log"]) {
+#if !__has_feature(objc_arc)
 			[super dealloc];
+#endif
 			return nil;
 		}
 	}
@@ -24,7 +26,7 @@
 
 - (EPNumericalToken *)applyToOperand:(id)anOperand {
 	if (![anOperand respondsToSelector:@selector(doubleValue)]) {
-		return NO;
+		return nil;
 	}
 	double answer = 0;
 	if (natural) {
@@ -32,7 +34,11 @@
 	} else {
 		answer = log10([anOperand doubleValue]);
 	}
+#if __has_feature(objc_arc)
+    return [[EPNumericalToken alloc] initWithDouble:answer];
+#else
 	return [[[EPNumericalToken alloc] initWithDouble:answer] autorelease];
+#endif
 }
 
 - (BOOL)isNatural {

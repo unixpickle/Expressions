@@ -17,7 +17,10 @@
 		} else if ([aString isEqualToString:@")"]) {
 			direction = EPTParenthesesClose;
 		} else {
-			[super dealloc];
+#if !__has_feature(objc_arc)
+            [super dealloc];
+#endif
+			
 			return nil;
 		}
 	}
@@ -37,7 +40,11 @@
 }
 
 - (id)negativeToken {
-	return [[self retain] autorelease];
+#if !__has_feature(objc_arc)
+    return [[self retain] autorelease];
+#else
+    return self;
+#endif
 }
 
 - (id)copyWithZone:(NSZone *)zone {
