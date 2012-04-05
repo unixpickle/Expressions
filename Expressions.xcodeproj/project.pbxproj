@@ -10,24 +10,24 @@
 		FA92705D1413BDC200D11AA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA92705C1413BDC200D11AA6 /* Foundation.framework */; };
 		FA9270601413BDC200D11AA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92705F1413BDC200D11AA6 /* main.m */; };
 		FA9270641413BDC200D11AA6 /* Expressions.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA9270631413BDC200D11AA6 /* Expressions.1 */; };
-		FA92706C1413BEF500D11AA6 /* EPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92706B1413BEF500D11AA6 /* EPToken.m */; };
-		FA9270701413BFF300D11AA6 /* EPParenthesesToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92706F1413BFF300D11AA6 /* EPParenthesesToken.m */; };
-		FA9270731413C10900D11AA6 /* EPOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9270721413C10800D11AA6 /* EPOperator.m */; };
-		FA9270781413C30000D11AA6 /* EPAddSubOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9270771413C30000D11AA6 /* EPAddSubOperator.m */; };
-		FA92707B1413C51900D11AA6 /* EPMulDivOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92707A1413C51900D11AA6 /* EPMulDivOperator.m */; };
-		FA92707E1413C5D200D11AA6 /* EPExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92707D1413C5D200D11AA6 /* EPExpression.m */; };
-		FA9270811413C61900D11AA6 /* EPNumericalToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9270801413C61900D11AA6 /* EPNumericalToken.m */; };
-		FA9270841413C65E00D11AA6 /* EPPowerOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9270831413C65E00D11AA6 /* EPPowerOperator.m */; };
-		FA9270871413CC8D00D11AA6 /* EPFunctionToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9270861413CC8C00D11AA6 /* EPFunctionToken.m */; };
-		FA92708A1413CD3700D11AA6 /* EPVariableToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9270891413CD3600D11AA6 /* EPVariableToken.m */; };
-		FA9A0C341414065F00CFA1EE /* EPTanAtanFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A0C331414065F00CFA1EE /* EPTanAtanFunction.m */; };
-		FA9A0C381414076C00CFA1EE /* EPLogLnToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A0C371414076C00CFA1EE /* EPLogLnToken.m */; };
-		FA9A0C3C1414126500CFA1EE /* EPSqrtFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A0C3B1414126400CFA1EE /* EPSqrtFunction.m */; };
-		FAB041D31413D774001BDB42 /* EPTokenString.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041D21413D774001BDB42 /* EPTokenString.m */; };
-		FAB041D71413D89C001BDB42 /* EPSinCosFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041D61413D89C001BDB42 /* EPSinCosFunction.m */; };
-		FAB041DA1413D90F001BDB42 /* EPStandardFunctionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041D91413D90F001BDB42 /* EPStandardFunctionSource.m */; };
-		FAB041DD1413EEA2001BDB42 /* NSNumber+Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041DC1413EEA2001BDB42 /* NSNumber+Expression.m */; };
-		FAB041E11413EF25001BDB42 /* EPDictionaryVariableSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB041E01413EF25001BDB42 /* EPDictionaryVariableSource.m */; };
+		FA9F6B34152E36FF00C9A306 /* EPExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B0D152E36C700C9A306 /* EPExpression.m */; };
+		FA9F6B35152E36FF00C9A306 /* EPTokenString.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B0F152E36C700C9A306 /* EPTokenString.m */; };
+		FA9F6B36152E36FF00C9A306 /* NSNumber+Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B11152E36C700C9A306 /* NSNumber+Expression.m */; };
+		FA9F6B37152E36FF00C9A306 /* EPNumericalToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B14152E36C700C9A306 /* EPNumericalToken.m */; };
+		FA9F6B38152E36FF00C9A306 /* EPParenthesesToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B16152E36C700C9A306 /* EPParenthesesToken.m */; };
+		FA9F6B39152E36FF00C9A306 /* EPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B18152E36C700C9A306 /* EPToken.m */; };
+		FA9F6B3A152E36FF00C9A306 /* EPFunctionToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B1B152E36C700C9A306 /* EPFunctionToken.m */; };
+		FA9F6B3B152E36FF00C9A306 /* EPLogLnFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B1D152E36C700C9A306 /* EPLogLnFunction.m */; };
+		FA9F6B3C152E36FF00C9A306 /* EPSinCosFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B1F152E36C700C9A306 /* EPSinCosFunction.m */; };
+		FA9F6B3D152E36FF00C9A306 /* EPSqrtFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B21152E36C700C9A306 /* EPSqrtFunction.m */; };
+		FA9F6B3E152E36FF00C9A306 /* EPStandardFunctionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B23152E36C700C9A306 /* EPStandardFunctionSource.m */; };
+		FA9F6B3F152E36FF00C9A306 /* EPTanAtanFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B25152E36C700C9A306 /* EPTanAtanFunction.m */; };
+		FA9F6B40152E36FF00C9A306 /* EPAddSubOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B28152E36C700C9A306 /* EPAddSubOperator.m */; };
+		FA9F6B41152E36FF00C9A306 /* EPMulDivOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B2A152E36C700C9A306 /* EPMulDivOperator.m */; };
+		FA9F6B42152E36FF00C9A306 /* EPOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B2C152E36C700C9A306 /* EPOperator.m */; };
+		FA9F6B43152E36FF00C9A306 /* EPPowerOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B2E152E36C700C9A306 /* EPPowerOperator.m */; };
+		FA9F6B44152E36FF00C9A306 /* EPDictionaryVariableSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B31152E36C700C9A306 /* EPDictionaryVariableSource.m */; };
+		FA9F6B45152E36FF00C9A306 /* EPVariableToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9F6B33152E36C700C9A306 /* EPVariableToken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,42 +49,42 @@
 		FA92705F1413BDC200D11AA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA9270621413BDC200D11AA6 /* Expressions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expressions-Prefix.pch"; sourceTree = "<group>"; };
 		FA9270631413BDC200D11AA6 /* Expressions.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Expressions.1; sourceTree = "<group>"; };
-		FA92706A1413BEF500D11AA6 /* EPToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPToken.h; sourceTree = "<group>"; };
-		FA92706B1413BEF500D11AA6 /* EPToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPToken.m; sourceTree = "<group>"; };
-		FA92706E1413BFF300D11AA6 /* EPParenthesesToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPParenthesesToken.h; sourceTree = "<group>"; };
-		FA92706F1413BFF300D11AA6 /* EPParenthesesToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPParenthesesToken.m; sourceTree = "<group>"; };
-		FA9270711413C10800D11AA6 /* EPOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPOperator.h; sourceTree = "<group>"; };
-		FA9270721413C10800D11AA6 /* EPOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPOperator.m; sourceTree = "<group>"; };
-		FA9270761413C30000D11AA6 /* EPAddSubOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAddSubOperator.h; sourceTree = "<group>"; };
-		FA9270771413C30000D11AA6 /* EPAddSubOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAddSubOperator.m; sourceTree = "<group>"; };
-		FA9270791413C51900D11AA6 /* EPMulDivOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPMulDivOperator.h; sourceTree = "<group>"; };
-		FA92707A1413C51900D11AA6 /* EPMulDivOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPMulDivOperator.m; sourceTree = "<group>"; };
-		FA92707C1413C5D200D11AA6 /* EPExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPExpression.h; sourceTree = "<group>"; };
-		FA92707D1413C5D200D11AA6 /* EPExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPExpression.m; sourceTree = "<group>"; };
-		FA92707F1413C61900D11AA6 /* EPNumericalToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPNumericalToken.h; sourceTree = "<group>"; };
-		FA9270801413C61900D11AA6 /* EPNumericalToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPNumericalToken.m; sourceTree = "<group>"; };
-		FA9270821413C65D00D11AA6 /* EPPowerOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPowerOperator.h; sourceTree = "<group>"; };
-		FA9270831413C65E00D11AA6 /* EPPowerOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPowerOperator.m; sourceTree = "<group>"; };
-		FA9270851413CC8C00D11AA6 /* EPFunctionToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPFunctionToken.h; sourceTree = "<group>"; };
-		FA9270861413CC8C00D11AA6 /* EPFunctionToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPFunctionToken.m; sourceTree = "<group>"; };
-		FA9270881413CD3600D11AA6 /* EPVariableToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPVariableToken.h; sourceTree = "<group>"; };
-		FA9270891413CD3600D11AA6 /* EPVariableToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPVariableToken.m; sourceTree = "<group>"; };
-		FA9A0C321414065F00CFA1EE /* EPTanAtanFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPTanAtanFunction.h; sourceTree = "<group>"; };
-		FA9A0C331414065F00CFA1EE /* EPTanAtanFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPTanAtanFunction.m; sourceTree = "<group>"; };
-		FA9A0C361414076C00CFA1EE /* EPLogLnToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLogLnToken.h; sourceTree = "<group>"; };
-		FA9A0C371414076C00CFA1EE /* EPLogLnToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPLogLnToken.m; sourceTree = "<group>"; };
-		FA9A0C3A1414126400CFA1EE /* EPSqrtFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSqrtFunction.h; sourceTree = "<group>"; };
-		FA9A0C3B1414126400CFA1EE /* EPSqrtFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSqrtFunction.m; sourceTree = "<group>"; };
-		FAB041D11413D774001BDB42 /* EPTokenString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPTokenString.h; sourceTree = "<group>"; };
-		FAB041D21413D774001BDB42 /* EPTokenString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPTokenString.m; sourceTree = "<group>"; };
-		FAB041D51413D89C001BDB42 /* EPSinCosFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSinCosFunction.h; sourceTree = "<group>"; };
-		FAB041D61413D89C001BDB42 /* EPSinCosFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSinCosFunction.m; sourceTree = "<group>"; };
-		FAB041D81413D90F001BDB42 /* EPStandardFunctionSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPStandardFunctionSource.h; sourceTree = "<group>"; };
-		FAB041D91413D90F001BDB42 /* EPStandardFunctionSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPStandardFunctionSource.m; sourceTree = "<group>"; };
-		FAB041DB1413EEA1001BDB42 /* NSNumber+Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Expression.h"; sourceTree = "<group>"; };
-		FAB041DC1413EEA2001BDB42 /* NSNumber+Expression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Expression.m"; sourceTree = "<group>"; };
-		FAB041DF1413EF25001BDB42 /* EPDictionaryVariableSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPDictionaryVariableSource.h; sourceTree = "<group>"; };
-		FAB041E01413EF25001BDB42 /* EPDictionaryVariableSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPDictionaryVariableSource.m; sourceTree = "<group>"; };
+		FA9F6B0C152E36C700C9A306 /* EPExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPExpression.h; sourceTree = "<group>"; };
+		FA9F6B0D152E36C700C9A306 /* EPExpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPExpression.m; sourceTree = "<group>"; };
+		FA9F6B0E152E36C700C9A306 /* EPTokenString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPTokenString.h; sourceTree = "<group>"; };
+		FA9F6B0F152E36C700C9A306 /* EPTokenString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPTokenString.m; sourceTree = "<group>"; };
+		FA9F6B10152E36C700C9A306 /* NSNumber+Expression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Expression.h"; sourceTree = "<group>"; };
+		FA9F6B11152E36C700C9A306 /* NSNumber+Expression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Expression.m"; sourceTree = "<group>"; };
+		FA9F6B13152E36C700C9A306 /* EPNumericalToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPNumericalToken.h; sourceTree = "<group>"; };
+		FA9F6B14152E36C700C9A306 /* EPNumericalToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPNumericalToken.m; sourceTree = "<group>"; };
+		FA9F6B15152E36C700C9A306 /* EPParenthesesToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPParenthesesToken.h; sourceTree = "<group>"; };
+		FA9F6B16152E36C700C9A306 /* EPParenthesesToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPParenthesesToken.m; sourceTree = "<group>"; };
+		FA9F6B17152E36C700C9A306 /* EPToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPToken.h; sourceTree = "<group>"; };
+		FA9F6B18152E36C700C9A306 /* EPToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPToken.m; sourceTree = "<group>"; };
+		FA9F6B1A152E36C700C9A306 /* EPFunctionToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPFunctionToken.h; sourceTree = "<group>"; };
+		FA9F6B1B152E36C700C9A306 /* EPFunctionToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPFunctionToken.m; sourceTree = "<group>"; };
+		FA9F6B1C152E36C700C9A306 /* EPLogLnFunction.h */ = {isa = PBXFileReference; path = EPLogLnFunction.h; sourceTree = "<group>"; };
+		FA9F6B1D152E36C700C9A306 /* EPLogLnFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPLogLnFunction.m; sourceTree = "<group>"; };
+		FA9F6B1E152E36C700C9A306 /* EPSinCosFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSinCosFunction.h; sourceTree = "<group>"; };
+		FA9F6B1F152E36C700C9A306 /* EPSinCosFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSinCosFunction.m; sourceTree = "<group>"; };
+		FA9F6B20152E36C700C9A306 /* EPSqrtFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSqrtFunction.h; sourceTree = "<group>"; };
+		FA9F6B21152E36C700C9A306 /* EPSqrtFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSqrtFunction.m; sourceTree = "<group>"; };
+		FA9F6B22152E36C700C9A306 /* EPStandardFunctionSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPStandardFunctionSource.h; sourceTree = "<group>"; };
+		FA9F6B23152E36C700C9A306 /* EPStandardFunctionSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPStandardFunctionSource.m; sourceTree = "<group>"; };
+		FA9F6B24152E36C700C9A306 /* EPTanAtanFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPTanAtanFunction.h; sourceTree = "<group>"; };
+		FA9F6B25152E36C700C9A306 /* EPTanAtanFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPTanAtanFunction.m; sourceTree = "<group>"; };
+		FA9F6B27152E36C700C9A306 /* EPAddSubOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPAddSubOperator.h; sourceTree = "<group>"; };
+		FA9F6B28152E36C700C9A306 /* EPAddSubOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPAddSubOperator.m; sourceTree = "<group>"; };
+		FA9F6B29152E36C700C9A306 /* EPMulDivOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPMulDivOperator.h; sourceTree = "<group>"; };
+		FA9F6B2A152E36C700C9A306 /* EPMulDivOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPMulDivOperator.m; sourceTree = "<group>"; };
+		FA9F6B2B152E36C700C9A306 /* EPOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPOperator.h; sourceTree = "<group>"; };
+		FA9F6B2C152E36C700C9A306 /* EPOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPOperator.m; sourceTree = "<group>"; };
+		FA9F6B2D152E36C700C9A306 /* EPPowerOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPPowerOperator.h; sourceTree = "<group>"; };
+		FA9F6B2E152E36C700C9A306 /* EPPowerOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPPowerOperator.m; sourceTree = "<group>"; };
+		FA9F6B30152E36C700C9A306 /* EPDictionaryVariableSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPDictionaryVariableSource.h; sourceTree = "<group>"; };
+		FA9F6B31152E36C700C9A306 /* EPDictionaryVariableSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPDictionaryVariableSource.m; sourceTree = "<group>"; };
+		FA9F6B32152E36C700C9A306 /* EPVariableToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPVariableToken.h; sourceTree = "<group>"; };
+		FA9F6B33152E36C700C9A306 /* EPVariableToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPVariableToken.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 		FA92705E1413BDC200D11AA6 /* Expressions */ = {
 			isa = PBXGroup;
 			children = (
-				FA92706D1413BF9900D11AA6 /* Expression Parser */,
+				FA9F6B0B152E36C700C9A306 /* Parser */,
 				FA92705F1413BDC200D11AA6 /* main.m */,
 				FA9270631413BDC200D11AA6 /* Expressions.1 */,
 				FA9270611413BDC200D11AA6 /* Supporting Files */,
@@ -143,79 +143,79 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FA92706D1413BF9900D11AA6 /* Expression Parser */ = {
+		FA9F6B0B152E36C700C9A306 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				FA9270751413C2D500D11AA6 /* Tokens */,
-				FAB041D11413D774001BDB42 /* EPTokenString.h */,
-				FAB041D21413D774001BDB42 /* EPTokenString.m */,
-				FA92707C1413C5D200D11AA6 /* EPExpression.h */,
-				FA92707D1413C5D200D11AA6 /* EPExpression.m */,
-				FAB041DB1413EEA1001BDB42 /* NSNumber+Expression.h */,
-				FAB041DC1413EEA2001BDB42 /* NSNumber+Expression.m */,
+				FA9F6B0C152E36C700C9A306 /* EPExpression.h */,
+				FA9F6B0D152E36C700C9A306 /* EPExpression.m */,
+				FA9F6B0E152E36C700C9A306 /* EPTokenString.h */,
+				FA9F6B0F152E36C700C9A306 /* EPTokenString.m */,
+				FA9F6B10152E36C700C9A306 /* NSNumber+Expression.h */,
+				FA9F6B11152E36C700C9A306 /* NSNumber+Expression.m */,
+				FA9F6B12152E36C700C9A306 /* Tokens */,
 			);
-			name = "Expression Parser";
+			path = Parser;
 			sourceTree = "<group>";
 		};
-		FA9270741413C2CA00D11AA6 /* Operators */ = {
+		FA9F6B12152E36C700C9A306 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
-				FA9270711413C10800D11AA6 /* EPOperator.h */,
-				FA9270721413C10800D11AA6 /* EPOperator.m */,
-				FA9270761413C30000D11AA6 /* EPAddSubOperator.h */,
-				FA9270771413C30000D11AA6 /* EPAddSubOperator.m */,
-				FA9270791413C51900D11AA6 /* EPMulDivOperator.h */,
-				FA92707A1413C51900D11AA6 /* EPMulDivOperator.m */,
-				FA9270821413C65D00D11AA6 /* EPPowerOperator.h */,
-				FA9270831413C65E00D11AA6 /* EPPowerOperator.m */,
+				FA9F6B13152E36C700C9A306 /* EPNumericalToken.h */,
+				FA9F6B14152E36C700C9A306 /* EPNumericalToken.m */,
+				FA9F6B15152E36C700C9A306 /* EPParenthesesToken.h */,
+				FA9F6B16152E36C700C9A306 /* EPParenthesesToken.m */,
+				FA9F6B17152E36C700C9A306 /* EPToken.h */,
+				FA9F6B18152E36C700C9A306 /* EPToken.m */,
+				FA9F6B19152E36C700C9A306 /* Functions */,
+				FA9F6B26152E36C700C9A306 /* Operators */,
+				FA9F6B2F152E36C700C9A306 /* Variables */,
 			);
-			name = Operators;
+			path = Tokens;
 			sourceTree = "<group>";
 		};
-		FA9270751413C2D500D11AA6 /* Tokens */ = {
+		FA9F6B19152E36C700C9A306 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				FAB041DE1413EF0E001BDB42 /* Variables */,
-				FAB041D41413D888001BDB42 /* Functions */,
-				FA9270741413C2CA00D11AA6 /* Operators */,
-				FA92706A1413BEF500D11AA6 /* EPToken.h */,
-				FA92706B1413BEF500D11AA6 /* EPToken.m */,
-				FA92706E1413BFF300D11AA6 /* EPParenthesesToken.h */,
-				FA92706F1413BFF300D11AA6 /* EPParenthesesToken.m */,
-				FA92707F1413C61900D11AA6 /* EPNumericalToken.h */,
-				FA9270801413C61900D11AA6 /* EPNumericalToken.m */,
+				FA9F6B1A152E36C700C9A306 /* EPFunctionToken.h */,
+				FA9F6B1B152E36C700C9A306 /* EPFunctionToken.m */,
+				FA9F6B1C152E36C700C9A306 /* EPLogLnFunction.h */,
+				FA9F6B1D152E36C700C9A306 /* EPLogLnFunction.m */,
+				FA9F6B1E152E36C700C9A306 /* EPSinCosFunction.h */,
+				FA9F6B1F152E36C700C9A306 /* EPSinCosFunction.m */,
+				FA9F6B20152E36C700C9A306 /* EPSqrtFunction.h */,
+				FA9F6B21152E36C700C9A306 /* EPSqrtFunction.m */,
+				FA9F6B22152E36C700C9A306 /* EPStandardFunctionSource.h */,
+				FA9F6B23152E36C700C9A306 /* EPStandardFunctionSource.m */,
+				FA9F6B24152E36C700C9A306 /* EPTanAtanFunction.h */,
+				FA9F6B25152E36C700C9A306 /* EPTanAtanFunction.m */,
 			);
-			name = Tokens;
+			path = Functions;
 			sourceTree = "<group>";
 		};
-		FAB041D41413D888001BDB42 /* Functions */ = {
+		FA9F6B26152E36C700C9A306 /* Operators */ = {
 			isa = PBXGroup;
 			children = (
-				FA9270851413CC8C00D11AA6 /* EPFunctionToken.h */,
-				FA9270861413CC8C00D11AA6 /* EPFunctionToken.m */,
-				FAB041D51413D89C001BDB42 /* EPSinCosFunction.h */,
-				FAB041D61413D89C001BDB42 /* EPSinCosFunction.m */,
-				FA9A0C321414065F00CFA1EE /* EPTanAtanFunction.h */,
-				FA9A0C331414065F00CFA1EE /* EPTanAtanFunction.m */,
-				FA9A0C361414076C00CFA1EE /* EPLogLnToken.h */,
-				FA9A0C371414076C00CFA1EE /* EPLogLnToken.m */,
-				FA9A0C3A1414126400CFA1EE /* EPSqrtFunction.h */,
-				FA9A0C3B1414126400CFA1EE /* EPSqrtFunction.m */,
-				FAB041D81413D90F001BDB42 /* EPStandardFunctionSource.h */,
-				FAB041D91413D90F001BDB42 /* EPStandardFunctionSource.m */,
+				FA9F6B27152E36C700C9A306 /* EPAddSubOperator.h */,
+				FA9F6B28152E36C700C9A306 /* EPAddSubOperator.m */,
+				FA9F6B29152E36C700C9A306 /* EPMulDivOperator.h */,
+				FA9F6B2A152E36C700C9A306 /* EPMulDivOperator.m */,
+				FA9F6B2B152E36C700C9A306 /* EPOperator.h */,
+				FA9F6B2C152E36C700C9A306 /* EPOperator.m */,
+				FA9F6B2D152E36C700C9A306 /* EPPowerOperator.h */,
+				FA9F6B2E152E36C700C9A306 /* EPPowerOperator.m */,
 			);
-			name = Functions;
+			path = Operators;
 			sourceTree = "<group>";
 		};
-		FAB041DE1413EF0E001BDB42 /* Variables */ = {
+		FA9F6B2F152E36C700C9A306 /* Variables */ = {
 			isa = PBXGroup;
 			children = (
-				FA9270881413CD3600D11AA6 /* EPVariableToken.h */,
-				FA9270891413CD3600D11AA6 /* EPVariableToken.m */,
-				FAB041DF1413EF25001BDB42 /* EPDictionaryVariableSource.h */,
-				FAB041E01413EF25001BDB42 /* EPDictionaryVariableSource.m */,
+				FA9F6B30152E36C700C9A306 /* EPDictionaryVariableSource.h */,
+				FA9F6B31152E36C700C9A306 /* EPDictionaryVariableSource.m */,
+				FA9F6B32152E36C700C9A306 /* EPVariableToken.h */,
+				FA9F6B33152E36C700C9A306 /* EPVariableToken.m */,
 			);
-			name = Variables;
+			path = Variables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,24 +269,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9270601413BDC200D11AA6 /* main.m in Sources */,
-				FA92706C1413BEF500D11AA6 /* EPToken.m in Sources */,
-				FA9270701413BFF300D11AA6 /* EPParenthesesToken.m in Sources */,
-				FA9270731413C10900D11AA6 /* EPOperator.m in Sources */,
-				FA9270781413C30000D11AA6 /* EPAddSubOperator.m in Sources */,
-				FA92707B1413C51900D11AA6 /* EPMulDivOperator.m in Sources */,
-				FA92707E1413C5D200D11AA6 /* EPExpression.m in Sources */,
-				FA9270811413C61900D11AA6 /* EPNumericalToken.m in Sources */,
-				FA9270841413C65E00D11AA6 /* EPPowerOperator.m in Sources */,
-				FA9270871413CC8D00D11AA6 /* EPFunctionToken.m in Sources */,
-				FA92708A1413CD3700D11AA6 /* EPVariableToken.m in Sources */,
-				FAB041D31413D774001BDB42 /* EPTokenString.m in Sources */,
-				FAB041D71413D89C001BDB42 /* EPSinCosFunction.m in Sources */,
-				FAB041DA1413D90F001BDB42 /* EPStandardFunctionSource.m in Sources */,
-				FAB041DD1413EEA2001BDB42 /* NSNumber+Expression.m in Sources */,
-				FAB041E11413EF25001BDB42 /* EPDictionaryVariableSource.m in Sources */,
-				FA9A0C341414065F00CFA1EE /* EPTanAtanFunction.m in Sources */,
-				FA9A0C381414076C00CFA1EE /* EPLogLnToken.m in Sources */,
-				FA9A0C3C1414126500CFA1EE /* EPSqrtFunction.m in Sources */,
+				FA9F6B34152E36FF00C9A306 /* EPExpression.m in Sources */,
+				FA9F6B35152E36FF00C9A306 /* EPTokenString.m in Sources */,
+				FA9F6B36152E36FF00C9A306 /* NSNumber+Expression.m in Sources */,
+				FA9F6B37152E36FF00C9A306 /* EPNumericalToken.m in Sources */,
+				FA9F6B38152E36FF00C9A306 /* EPParenthesesToken.m in Sources */,
+				FA9F6B39152E36FF00C9A306 /* EPToken.m in Sources */,
+				FA9F6B3A152E36FF00C9A306 /* EPFunctionToken.m in Sources */,
+				FA9F6B3B152E36FF00C9A306 /* EPLogLnFunction.m in Sources */,
+				FA9F6B3C152E36FF00C9A306 /* EPSinCosFunction.m in Sources */,
+				FA9F6B3D152E36FF00C9A306 /* EPSqrtFunction.m in Sources */,
+				FA9F6B3E152E36FF00C9A306 /* EPStandardFunctionSource.m in Sources */,
+				FA9F6B3F152E36FF00C9A306 /* EPTanAtanFunction.m in Sources */,
+				FA9F6B40152E36FF00C9A306 /* EPAddSubOperator.m in Sources */,
+				FA9F6B41152E36FF00C9A306 /* EPMulDivOperator.m in Sources */,
+				FA9F6B42152E36FF00C9A306 /* EPOperator.m in Sources */,
+				FA9F6B43152E36FF00C9A306 /* EPPowerOperator.m in Sources */,
+				FA9F6B44152E36FF00C9A306 /* EPDictionaryVariableSource.m in Sources */,
+				FA9F6B45152E36FF00C9A306 /* EPVariableToken.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

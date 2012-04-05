@@ -38,9 +38,6 @@ int main (int argc, const char * argv[]) {
             }
         }
         NSLog(@"Done benchmark.");
-        while (true) {
-            
-        }
     }
 	
 	return 0;
