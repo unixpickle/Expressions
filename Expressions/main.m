@@ -28,7 +28,7 @@ int main (int argc, const char * argv[]) {
         
         printf("Enter an expression: ");
         NSString * expr = NSReadLine(stdin);
-        NSNumber * parsed = [NSNumber numberByParsingExpression:expr];
+        NSNumber * parsed = [NSNumber numberByParsingExpression:expr withVariables:variables];
         NSLog(@"%@ = %@", expr, parsed);
         
         NSLog(@"Starting benchmark: %@.", expr);

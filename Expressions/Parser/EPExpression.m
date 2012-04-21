@@ -11,6 +11,7 @@
 @interface EPExpression (Private)
 
 - (EPTokenString *)subExpression:(EPTokenString *)aString fromIndex:(NSUInteger *)i;
+- (void)substituteVariables;
 - (BOOL)performFunctions;
 - (BOOL)performOperatorsOfClass:(Class)aClass;
 - (BOOL)evaluateSubExpressions;
@@ -119,6 +120,7 @@
 
 - (EPNumericalToken *)evaluateToToken {
 	// Here we use PEMDAS to evaluate the expression
+    [self substituteVariables];
 	if (![self evaluateSubExpressions]) return nil; // P
 	if (![self performFunctions]) return nil; // (implied)
 	if (![self performOperatorsOfClass:[EPPowerOperator class]]) return nil; // E
@@ -127,8 +129,13 @@
 	if ([tokens count] != 1) {
 		return nil;
 	}
+    
+    // if the expression is simply a variable, we can still evaluate it...
 	if (![[tokens objectAtIndex:0] isKindOfClass:[EPNumericalToken class]]) {
-		return nil;
+        id obj = [tokens objectAtIndex:0];
+        if (![obj isKindOfClass:[EPVariableToken class]]) return nil;
+        EPNumericalToken * token = [EPNumericalToken numericalTokenWithDouble:[obj doubleValue]];
+        [tokens replaceObjectAtIndex:0 withObject:token];
 	}
 	if (!negateExpression) {
 		return [tokens objectAtIndex:0];
@@ -177,6 +184,17 @@
 	}
 	EPTokenString * substr = [aString substringWithRange:NSMakeRange(startParen, endParen - startParen)];
 	return substr;
+}
+
+- (void)substituteVariables {
+    for (NSUInteger i = 0; i < [tokens count]; i++) {
+        if ([[tokens objectAtIndex:i] isKindOfClass:[EPVariableToken class]]) {
+            id obj = [tokens objectAtIndex:i];
+            EPNumericalToken * number = [EPNumericalToken numericalTokenWithDouble:[obj doubleValue]];
+            [tokens replaceObjectAtIndex:i withObject:number];
+        }
+    }
+    return YES;
 }
 
 - (BOOL)performFunctions {
