@@ -194,7 +194,7 @@
             [tokens replaceObjectAtIndex:i withObject:number];
         }
     }
-    return YES;
+    return;
 }
 
 - (BOOL)performFunctions {
